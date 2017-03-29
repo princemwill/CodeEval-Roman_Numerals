@@ -12,14 +12,14 @@ namespace roman_numerals
             static void Main(string[] args)
             {
                 RomanNum rom = new RomanNum();
-                using (StreamReader reader = File.OpenText(args[0]))
+                using (StreamReader reader = File.OpenText(@"C:\Users\princ\Documents\Notes\numbersToRoman.txt"))
                     while (!reader.EndOfStream)
                     {
                         string line = reader.ReadLine();
                         if (null == line)
                             continue;
                         
-                        Console.WriteLine(rom.ConvertToRoman(Convert.ToInt32(line)));
+                        Console.WriteLine(line + " converted to Roman Numerals is " + rom.ConvertToRoman(Convert.ToInt32(line)));
                     }
                 Console.ReadKey();
             }
